@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, ref, watch, watchEffect } from "vue";
 import { fetchCompleteCourse, fetchCourse, fetchTryCourse } from "~/api/course";
-import { courses } from "~/api/data/class";
+import { allCourses } from "~/api/data/class";
 import { useActiveCourseId } from "~/composables/courses/activeCourse";
 import { useCourseProgress } from "~/composables/courses/progress";
 import { useUserStore } from "~/store/user";
@@ -81,9 +81,9 @@ export const useCourseStore = defineStore("course", () => {
   }
   
   function newSetUp(courseId: number) {
-    let course = courses
+    let course = allCourses
     console.log(course);
-    currentCourse.value = courses[0];
+    currentCourse.value = allCourses[0];
     statementIndex.value = loadProgress(courseId);
 
   }

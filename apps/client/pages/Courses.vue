@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-full flex flex-col">
-    <h2 class="my-4 text-3xl text-blue-500">English Course</h2>
+    <h2 class="my-4 text-3xl text-blue-500">Japanese Course</h2>
     <div class="h-full scrollbar-hide">
       <div
         v-if="courses.length"
@@ -28,6 +28,7 @@
 import { onMounted, ref } from "vue";
 import { fetchCourses } from "~/api/course";
 import { fetchCourseHistory } from "~/api/courseHistory";
+import { allCourses } from "~/api/data/class";
 
 import Loading from "~/components/Loading.vue";
 import CourseCard from "~/components/courses/CourseCard.vue";
@@ -64,7 +65,7 @@ async function getCourses() {
 }
 
 onMounted(async () => {
-  courses.value = await getCourses();
+  courses.value = allCourses;
 });
 
 const { updateActiveCourseId } = useActiveCourseId();

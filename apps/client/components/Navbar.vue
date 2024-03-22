@@ -49,7 +49,8 @@
           <li @click="handleLogout"><a>Log out</a></li>
         </ul>
       </div>
-      <button
+      <!-- FIXME Login -->
+      <!-- <button
         v-show="
           !userStore.user &&
           (route.name === 'Auth-SignUp' || route.name !== 'Auth-Login')
@@ -58,7 +59,7 @@
         @click="handleLogin"
       >
         Log in
-      </button>
+      </button> -->
       <button
         v-show="route.name === 'Auth-Login'"
         class="btn btn-sm btn-ghost mx-1 h-8 px-2"

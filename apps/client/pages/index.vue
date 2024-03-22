@@ -13,7 +13,7 @@
           >
             Earthworm is now available! 🎉
             <br class="sm:hidden" />
-            Start your English learning journey now!
+            Start your Japanese learning journey now!
           </p>
           <a
             class="mt-4 block rounded-lg bg-white px-5 py-3 text-center text-sm font-medium text-purple-600 transition hover:bg-white/90 hover:text-pink-500 focus:outline-none focus:ring active:text-pink-500 sm:mt-0"
@@ -28,7 +28,7 @@
       >
         <div class="w-1/2 mx-4">
           <div class="items-center mb-12 text-3xl leading-loose opacity-80">
-            <div class="">Why aren’t you good at English?</div>
+            <div class="">Why aren’t you good at Japanese?</div>
             <div class="align-middle">
               It’s because you haven’t used
               <span class="font-bold text-fuchsia-400">EARTHWORM</span> yet! 🤪
@@ -72,7 +72,7 @@
       <section class="flex flex-col py-8">
         <h2 class="text-4xl text-center">What is Earthworm?</h2>
         <p class="pt-2 text-center">
-          an open-source, collaborative, user-friendly English learning tool.
+          an open-source, collaborative, user-friendly Japanese learning tool.
         </p>
         <div class="flex">
           <div

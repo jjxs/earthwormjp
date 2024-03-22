@@ -3,7 +3,7 @@
 import type { Course } from "../../store/course";
 
 
-export const courses: Course[] = [
+export const allCourses: Course[] = [
     {
       id: 1,
       title: "第一课",
@@ -95,7 +95,7 @@ export const courses: Course[] = [
         {
             "id": 13,
             "japanese": "戒める",
-            "hirakana": "いさめる",
+            "hirakana": "いましめる",
             "chinese": "劝告，警告",
             "soundmark": "先輩は私たちに注意を戒めてくれました。"
         },
@@ -165,7 +165,7 @@ export const courses: Course[] = [
         {
             "id": 23,
             "japanese": "脅かす",
-            "hirakana": "おどかす",
+            "hirakana": "おびやかす",
             "chinese": "威胁，恐吓",
             "soundmark": "彼は私たちを脅かしてお金を要求した。"
         },
