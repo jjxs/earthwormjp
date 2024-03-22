@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted } from "vue";
-import { useCurrentStatementEnglishSound } from "~/composables/main/englishSound";
+import { useCurrentStatementJapaneseSound } from "~/composables/main/japaneseSound";
 import { useGameMode } from "~/composables/main/game";
 import { useSummary } from "~/composables/main/summary";
 import { useShortcutKeyMode } from "~/composables/user/shortcutKey";
@@ -38,7 +38,7 @@ const toggleTipText = computed(() => {
 });
 
 function usePlaySound(key: string) {
-  const { playSound } = useCurrentStatementEnglishSound();
+  const { playSound } = useCurrentStatementJapaneseSound();
 
   onMounted(() => {
     registerShortcut(key, playSoundCommand);

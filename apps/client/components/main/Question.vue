@@ -60,7 +60,7 @@ const {
   setInputValue,
   handleKeyboardInput,
 } = useInput({
-  source: () => courseStore.currentStatement?.english!,
+  source: () => courseStore.currentStatement?.japanese!,
   setInputCursorPosition,
   getInputCursorPosition,
 });

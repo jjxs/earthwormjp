@@ -87,7 +87,8 @@
       :style="{ width: currentPercentage + '%' }"
     ></div>
   </div>
-  <ProgressRank></ProgressRank>
+  <!-- FIXME: 排行-->
+  <!-- <ProgressRank></ProgressRank> -->
   <MessageBox
     class="mt-[-4vh]"
     v-model:isShowModal="showTipModal"

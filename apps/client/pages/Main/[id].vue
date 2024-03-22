@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta } from "#imports";
+// import { definePageMeta } from "#imports";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import Loading from "~/components/Loading.vue";
@@ -20,9 +20,9 @@ import Tool from "~/components/main/Tool.vue";
 import { useGameMode } from "~/composables/main/game";
 import { useCourseStore } from "~/store/course";
 
-definePageMeta({
-  middleware: "auth",
-});
+// definePageMeta({
+//   middleware: "auth",
+// });
 
 const isLoading = ref(true);
 const route = useRoute();
@@ -31,8 +31,9 @@ const { showQuestion } = useGameMode();
 
 showQuestion();
 
-onMounted(async () => {
-  await coursesStore.setup(Number(route.params.id));
+onMounted( () => {
+  // await coursesStore.setup(Number(route.params.id));
+  coursesStore.newSetUp(Number(route.params.id));
   isLoading.value = false;
 });
 </script>

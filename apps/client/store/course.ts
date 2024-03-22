@@ -1,15 +1,16 @@
 import { defineStore } from "pinia";
 import { computed, ref, watch, watchEffect } from "vue";
 import { fetchCompleteCourse, fetchCourse, fetchTryCourse } from "~/api/course";
+import { courses } from "~/api/data/class";
 import { useActiveCourseId } from "~/composables/courses/activeCourse";
 import { useCourseProgress } from "~/composables/courses/progress";
 import { useUserStore } from "~/store/user";
-
 interface Statement {
   id: number;
   chinese: string;
-  english: string;
+  japanese: string;
   soundmark: string;
+  hirakana: string;
 }
 
 export interface Course {
@@ -40,7 +41,7 @@ export const useCourseStore = defineStore("course", () => {
   );
 
   const words = computed(() => {
-    return currentStatement.value?.english.split(" ") || [];
+    return currentStatement.value?.japanese.split(" ") || [];
   });
 
   const totalQuestionsCount = computed(() => {
@@ -67,7 +68,7 @@ export const useCourseStore = defineStore("course", () => {
   function checkCorrect(input: string) {
     return (
       input.toLocaleLowerCase() ===
-      currentStatement.value?.english.toLocaleLowerCase()
+      currentStatement.value?.japanese.toLocaleLowerCase()
     );
   }
 
@@ -77,6 +78,14 @@ export const useCourseStore = defineStore("course", () => {
     // 当完成课程的时候并不希望 UI 立刻被重置
     saveProgress(currentCourse.value?.id!, 0);
     return nextCourse;
+  }
+  
+  function newSetUp(courseId: number) {
+    let course = courses
+    console.log(course);
+    currentCourse.value = courses[0];
+    statementIndex.value = loadProgress(courseId);
+
   }
 
   async function setup(courseId: number) {
@@ -105,6 +114,7 @@ export const useCourseStore = defineStore("course", () => {
     words,
     totalQuestionsCount,
     setup,
+    newSetUp,
     doAgain,
     isAllDone,
     checkCorrect,

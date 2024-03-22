@@ -1,7 +1,8 @@
 <template>
   <div class="text-center">
+    <div class="ml-4 text-2xl text-200 ">{{ courseStore.currentStatement?.hirakana }}</div>
     <div class="ml-8 text-5xl text-fuchsia-500 dark:text-gray-50">
-      {{ courseStore.currentStatement?.english }}
+      {{ courseStore.currentStatement?.japanese }}
       <svg
         class="inline-block ml-1 cursor-pointer w-7 h-7"
         viewBox="0 0 1024 1024"
@@ -25,7 +26,7 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted } from "vue";
-import { useCurrentStatementEnglishSound } from "~/composables/main/englishSound";
+import { useCurrentStatementJapaneseSound } from "~/composables/main/japaneseSound";
 import { useGameMode } from "~/composables/main/game";
 import { useSummary } from "~/composables/main/summary";
 import { useAutoSound } from "~/composables/user/sound";
@@ -34,13 +35,13 @@ import { cancelShortcut, registerShortcut } from "~/utils/keyboardShortcuts";
 
 const courseStore = useCourseStore();
 registerShortcutKeyForNextQuestion();
-const { handlePlaySound } = usePlayEnglishSound();
+const { handlePlaySound } = usePlayJapaneseSound();
 const { showSummary } = useSummary();
 const { showQuestion } = useGameMode();
 const { isAutoPlaySound } = useAutoSound();
 
-function usePlayEnglishSound() {
-  const { playSound } = useCurrentStatementEnglishSound();
+function usePlayJapaneseSound() {
+  const { playSound } = useCurrentStatementJapaneseSound();
 
   onMounted(() => {
     if (isAutoPlaySound()) {

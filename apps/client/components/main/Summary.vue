@@ -67,7 +67,7 @@ import { useRouter } from "vue-router";
 import { useActiveCourseId } from "~/composables/courses/activeCourse";
 import { useAuthRequire } from "~/composables/main/authRequire";
 import { useConfetti } from "~/composables/main/confetti/useConfetti";
-import { readOneSentencePerDayAloud } from "~/composables/main/englishSound";
+import { readOneSentencePerDayAloud } from "~/composables/main/japaneseSound";
 import { useGameMode } from "~/composables/main/game";
 import { useShareModal } from "~/composables/main/shareImage/share";
 import { useDailySentence, useSummary } from "~/composables/main/summary";

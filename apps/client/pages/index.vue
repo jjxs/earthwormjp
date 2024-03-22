@@ -207,12 +207,12 @@
       </section>
     </template>
 
-    <MessageBox
+    <!-- <MessageBox
       v-model:is-show-modal="showMobileTip"
       content="The app isn't mobile-friendly, so stay tuned!"
       cancel-btn-text="fine"
       confirm-btn-text=""
-    ></MessageBox>
+    ></MessageBox> -->
   </div>
 </template>
 
@@ -221,7 +221,6 @@ import { onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 
 import Loading from "~/components/Loading.vue";
-import MessageBox from "~/components/main/MessageBox/MessageBox.vue";
 
 import { useGameStore } from "~/store/game";
 import { cancelShortcut, registerShortcut } from "~/utils/keyboardShortcuts";

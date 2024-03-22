@@ -1,17 +1,17 @@
-import { useCourseStore } from "~/store/course";
-import { updateSource, play } from "./audio";
 import { watchEffect } from "vue";
+import { useCourseStore } from "~/store/course";
+import { play, updateSource } from "./audio";
 
 let prevWord = "";
-export function useCurrentStatementEnglishSound() {
+export function useCurrentStatementJapaneseSound() {
   const courseStore = useCourseStore();
 
   watchEffect(() => {
-    const word = courseStore.currentStatement?.english;
+    const word = courseStore.currentStatement?.japanese;
     if (prevWord !== word) {
-      updateSource(`https://dict.youdao.com/dictvoice?audio=${word}&type=1`);
+      updateSource(`https://dict.youdao.com/dictvoice?audio=${word}&type=4&le=jap`);
     }
-    prevWord = courseStore.currentStatement?.english!
+    prevWord = courseStore.currentStatement?.japanese!
   });
 
   return {
